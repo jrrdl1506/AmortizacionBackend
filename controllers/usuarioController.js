@@ -57,7 +57,7 @@ exports.autenticarUsuario = async (req,res) => {
         if(!usuario){
             return res.status(401).json({mensaje:'Credenciales incorrectas'});
         }
-        return res.status(200).json({user});
+        return res.status(200).json(user);
     }
     catch(error){
         console.log(error);

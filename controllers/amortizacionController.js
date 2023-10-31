@@ -72,3 +72,21 @@ exports.getPrestamos = async (req,res) => {
     }
 }
 
+exports.getAmortizacion = async(req,res)=>{
+    try{
+        const usuarioId = req.params.id;
+        // console.log(usuarioId);
+        const amortizacion = await Amortizacion.findOne({usuario:usuarioId});
+        
+        if(!amortizacion){
+            return res.status(404).json({message:'La amortizacion no existe'});
+        }
+        return res.status(200).json(amortizacion);
+    
+    }
+    catch(error){
+        return res.status(500).json({message:'Error al obtener amortizacion'});
+
+    }
+}
+

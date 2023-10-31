@@ -12,6 +12,7 @@ router.get('/getUser/:id',usuarioController.obtenerUsuario);
 //Rutas para las amortizaciones
 
 router.post('/generaAmortizacion',amortizacionController.createAmortizacion);
+router.get('/obtenerAmortizacion/:id',amortizacionController.getAmortizacion);
 router.post('/anadirPrestamo/:id',amortizacionController.anadirPrestamo);
-router.get('/obtenerPrestamo/:id',amortizacionController.getPrestamos);
+router.get('/obtenerPrestamos/:id',amortizacionController.getPrestamos);
 module.exports = router;
